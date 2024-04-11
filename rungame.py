@@ -4,6 +4,19 @@
 #    ship is lost at sea, trying to return home
 #         - dangers and opportunities
 #         - crew, crew's health
+'''
+Commands:
+Map
+go North/South/East/West
+skills
+inventory
+{name} inventory
+{name} equip item
+{name} unequip item
+
+'''
+
+# Objective: make our own event
 
 import game.ship as ship
 import game.world as world
