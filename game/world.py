@@ -62,8 +62,8 @@ class World (context.Context):
         self.events.append (lucky.LuckyDay())
         self.events.append (nothing.Nothing())
         self.events.append (seagull.Seagull())
-        self.events.append (seagull.Seagull())
-        self.events.append (seagull.Seagull())
+        self.events.append (shark.Shark())
+        self.events.append (shark.Shark())
         self.events.append (sickness.Sickness())
         self.events.append (drowned_pirates.DrownedPirates())
         self.nouns["world"] = self
