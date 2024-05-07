@@ -5,5 +5,7 @@ __all__ = ["drowned_pirates",
 "nothing",
 "sickness",
 "seagull",
-"shark"
+"shark",
+"angry_goats",
+"monkey_king"
 ]

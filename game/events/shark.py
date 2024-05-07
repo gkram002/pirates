@@ -43,7 +43,7 @@ class Shark (Context, event.Event):
                  print("the shark is now getting angry")
         elif (verb == "feed"):
             self.sharks = self.sharks + 1
-            self.result["newevents"].append (Shark())
+            self.result["newevents"].append(Shark())
             self.result["message"] = "the shark is now happy"
             self.go = True
         elif (verb == "play"):

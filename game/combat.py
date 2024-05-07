@@ -79,6 +79,14 @@ class Macaque(Monster):
         #7 to 19 hp, bite attack, 160 to 200 speed (100 is "normal")
         super().__init__(name, random.randrange(7,20), attacks, 180 + random.randrange(-20,21))
 
+class Goat(Monster):
+    def __init__ (self, name):
+        attacks = {}
+        attacks["ram"] = ["rams you",random.randrange(60,100), (10,20)]
+        #7 to 19 hp, bite attack, 160 to 200 speed (100 is "normal")
+        super().__init__(name, random.randrange(7,20), attacks, 180 + random.randrange(-20,21))
+
+
 class Drowned(Monster):
     def __init__ (self, name):
         attacks = {}
@@ -87,3 +95,11 @@ class Drowned(Monster):
         attacks["punch 2"] = ["punches",random.randrange(35,51), (1,10)]
         #7 to 19 hp, bite attack, 65 to 85 speed (100 is "normal")
         super().__init__(name, random.randrange(7,20), attacks, 75 + random.randrange(-10,11))
+
+
+class MonkeyKing(Monster):
+    def __init__ (self, name):
+        attacks = {}
+        attacks["slam"] = ["slams you",random.randrange(75,120), (10,20)]
+        #7 to 19 hp, bite attack, 160 to 200 speed (100 is "normal")
+        super().__init__(name, random.randrange(30, 80), attacks, 180 + random.randrange(-5,21))

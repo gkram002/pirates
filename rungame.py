@@ -3,7 +3,7 @@
 # player - controlling a ship
 #    ship is lost at sea, trying to return home
 #         - dangers and opportunities
-#         - crew, crew's health
+#         - crew, crew's g
 
 import game.ship as ship
 import game.world as world
