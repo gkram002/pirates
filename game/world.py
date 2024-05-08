@@ -35,7 +35,7 @@ class World (context.Context):
         self.locs[self.homex][self.homey] = homeport.HomePort (self.homex, self.homey, self)
 
         #Add new islands to this list:
-        island_list = [island.Island]
+        island_list = [island.Island, abandonedIsland.AbandonedIsland]
         for cur_island in island_list:
             placed = False
             while placed == False:
@@ -57,10 +57,6 @@ class World (context.Context):
         # Peaceful island directly to the right of the spawning location.
         peacefulIsland = PeacefulIsland.PeacefulIsland(self.startx + 1, self.starty, self)
         self.locs[self.startx + 1][self.starty] = peacefulIsland
-
-        # My Island, directly to the left of the spawning location
-        abandonedIsle = abandonedIsland.AbandonedIsland(self.startx - 1, self.starty, self)
-        self.locs[self.startx - 1][self.starty] = abandonedIsle
 
         self.events = []
         self.events.append (lucky.LuckyDay())
