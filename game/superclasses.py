@@ -2,6 +2,7 @@ from __future__ import annotations
 from game.display import announce
 from game.display import menu
 import random
+import game.config as config
 
 class Attack():
     """Basic attack object, with a name, description, chance of success, and damage range. Sufficient for specifying monster attacks."""
@@ -31,6 +32,17 @@ class Defend():
             return True
         return False
 
+class specialAttack():
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
+
+    def __eq__(self, other):
+        if not isinstance(other, specialAttack):
+            return False
+        if self.name == other.name and self.description == other.description:
+            return True
+        return False
 
 class ActionResolver():
     def pickTargets(self, action, attacker, allies, enemies):
@@ -55,6 +67,25 @@ class ActionResolver():
                     #Moving is defending chosen target. Moving is the defender and target is the defendee
                     moving.addDefendee(chosen_target)
                     chosen_target.addDefender(moving)
+
+        elif isinstance(chosen_attk, specialAttack):
+            for chosen_target in chosen_targets:
+                randomPirate = chosen_target
+                announce("The sphynx is planning to unleash its magic on a random crewmate\n")
+
+                for pirate in config.the_player.get_pirates():
+                    pirate.print()
+
+                guard = input("\nEnter the name of the pirate you wish to guard: ")
+                if guard == str(randomPirate).strip():
+                    announce(f"You managed to guard {guard}.")
+                else:
+                    announce(f"{randomPirate.get_name()} was damaged by the sphynx's magic.")
+                    randomPirate.inflict_damage(80, " Sphynx's curse.")
+                    if randomPirate.get_health() <= 0:
+                        announce(f"{randomPirate.get_name()} has been erased!")
+
+
         else:
             for chosen_target in chosen_targets:
                 if chosen_target != None:

@@ -110,6 +110,14 @@ class CrewMate(Context, superclasses.CombatCritter):
         self.sick = flag
 
     def start_day (self, ship):
+        '''Testing '''
+        healthBoost = 1
+        c = config.the_player.get_world()
+        if c.checkLi.check_inventory():
+            healthBoost = 3
+            self.sick = False
+            announce(f'The staff of life heals {self}wounds.')
+
         '''Beginning of day activities (days only occur while sailing on the ship)'''
         ship.take_food (self.get_hunger())
         if (self.sick):
@@ -121,14 +129,14 @@ class CrewMate(Context, superclasses.CombatCritter):
         elif self.health < 100:
             #Note: more serious wounds take MUCH longer to heal
             # Try to limit the damage you take in combat!
-            if self.health >= 75:
-                self.health += random.randint(1,10)
+            if self.health >= 75: 
+                self.health += random.randint(1,10) * healthBoost
             elif self.health >= 50:
-                self.health += random.randint(1,6)
+                self.health += random.randint(1,6) * healthBoost
             elif self.health >= 25:
-                self.health += random.randint(1,4)
+                self.health += random.randint(1,4) * healthBoost
             else:
-                self.health += 1
+                self.health += 1 * healthBoost
             #Cap at 100
             if self.health > 100:
                 self.health = 100
