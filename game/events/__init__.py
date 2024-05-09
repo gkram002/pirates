@@ -8,5 +8,6 @@ __all__ = ["drowned_pirates",
 "seagull",
 "shark",
 "angry_goats",
-"monkey_king"
-]
+"monkey_king",
+"weather"]
+

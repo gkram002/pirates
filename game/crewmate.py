@@ -79,6 +79,10 @@ class CrewMate(Context, superclasses.CombatCritter):
         self.hurtToday = True
         if(self.health > 0):
             return None
+        self.kill(deathcause)
+        
+    def kill (self, deathcause):
+        self.health = 0
         self.death_cause = deathcause
         for d in self.defendees:
             d.removeDefender(self)

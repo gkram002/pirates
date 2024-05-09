@@ -35,7 +35,7 @@ class World (context.Context):
         self.locs[self.homex][self.homey] = homeport.HomePort (self.homex, self.homey, self)
 
         #Add new islands to this list:
-        island_list = [island.Island, desertIsland.DesertIsland, newisland.NewIsland]
+        island_list = [island.Island, desertIsland.DesertIsland, newisland.NewIsland, abandonedIsland.AbandonedIsland]
         for cur_island in island_list:
             placed = False
             while placed == False:
@@ -67,6 +67,7 @@ class World (context.Context):
         self.events.append (sickness.Sickness())
         self.events.append (drowned_pirates.DrownedPirates())
         self.events.append (doldrum.Doldrum())
+        self.events.append(weather.Weather())
         self.nouns["world"] = self
 
         self.checkLi = desertIsland

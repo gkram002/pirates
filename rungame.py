@@ -5,6 +5,18 @@
 #         - dangers and opportunities
 #         - crew, crew's g
 
+'''
+Commands:
+Map
+go North/South/East/West
+skills
+inventory
+{name} inventory
+{name} equip item
+{name} unequip item
+
+'''
+
 import game.ship as ship
 import game.world as world
 import game.player as player

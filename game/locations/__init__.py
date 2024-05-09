@@ -4,6 +4,6 @@ __all__ = ["shallow",
 "desertIsland",
 "homeport",
 "PeacefulIsland",
-"newisland"
-]
+"newisland",
+"abandonedIsland"]
 
